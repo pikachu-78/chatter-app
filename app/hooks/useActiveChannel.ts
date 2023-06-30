@@ -15,7 +15,7 @@ const useActiveChannel = () => {
     // we don't have to subscribe if user is not logged in
     if (!channel) {
       // presence- is mandatory
-      channel = pusherClient.subscribe("presence-messenger");
+      channel = pusherClient.subscribe("presence-chatter");
       setActiveChannel(channel);
     }
     channel.bind("pusher:subscription_succeeded", (members: Members) => {
