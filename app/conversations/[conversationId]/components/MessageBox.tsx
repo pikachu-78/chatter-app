@@ -66,7 +66,6 @@ const MessageBox: React.FC<MessageBoxProps> = ({
                 cursor-pointer 
                 hover:scale-110 
                 transition 
-                translate
               "
             />
           ) : (

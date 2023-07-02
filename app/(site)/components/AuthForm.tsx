@@ -97,14 +97,31 @@ const AuthForm = () => {
           toast.error('Invalid credentials!');
         }
 
-        if (callback?.ok) {
-          router.push('/conversations')
+        if (callback?.ok && !callback?.error) {
+          router.push('/conversations');
         }
       })
       .finally(() => setIsLoading(false));
   } 
 
   return ( 
+    <>
+    <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2
+        className="
+        text-center
+        text-3xl
+        font-bold
+        text-gray-900
+        mt-6
+        tracking-tight  
+       "
+        >
+          {variant === "LOGIN"
+            ? "Log in to your Account"
+            : "Create your Account"}
+        </h2> 
+    </div>
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div 
         className="
@@ -208,6 +225,7 @@ const AuthForm = () => {
         </div>
       </div>
     </div>
+    </>
   );
 }
  
